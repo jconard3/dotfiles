@@ -71,7 +71,7 @@ source $ZSH/oh-my-zsh.sh
 #Auto ls -lah after every cd
 function chpwd() {
   emulate -L zsh
-    l
+    ls -gahG
 }
 #kubectl completion
 source <(kubectl completion zsh)
