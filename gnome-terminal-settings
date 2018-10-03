@@ -1,0 +1,31 @@
+[legacy/keybindings]
+find='<Primary>f'
+paste='<Super>v'
+copy='<Super>c'
+close-tab='<Primary>w'
+new-tab='<Primary>t'
+
+[legacy]
+menu-accelerator-enabled=true
+schema-version=uint32 3
+default-show-menubar=false
+
+[legacy/profiles:]
+list=['b1dcc9dd-5262-4d8d-a863-c897e6d979b9', '382eb016-97b4-48d9-843e-601fe4fa2e3e', 'e612f65c-0dce-4316-9b8f-d5b794a83ea7']
+default='382eb016-97b4-48d9-843e-601fe4fa2e3e'
+
+[legacy/profiles:/:382eb016-97b4-48d9-843e-601fe4fa2e3e]
+foreground-color='rgb(238,238,236)'
+visible-name='Dracula'
+palette=['rgb(0,0,0)', 'rgb(255,110,103)', 'rgb(90,247,142)', 'rgb(244,249,157)', 'rgb(202,169,250)', 'rgb(255,146,208)', 'rgb(154,237,254)', 'rgb(104,104,104)', 'rgb(104,104,104)', 'rgb(255,110,103)', 'rgb(90,247,142)', 'rgb(244,249,157)', 'rgb(202,169,250)', 'rgb(255,146,208)', 'rgb(154,237,254)', 'rgb(255,255,255)']
+custom-command='tmux'
+use-system-font=false
+cursor-colors-set=false
+highlight-colors-set=true
+use-theme-colors=false
+use-custom-command=true
+font='DejaVu Sans Mono Book'
+bold-color-same-as-fg=false
+bold-color='rgb(110,70,164)'
+background-color='#282A36'
+highlight-foreground-color='rgb(255,255,255)'
