@@ -3,17 +3,13 @@ set nocompatible
 " vim-plug begin
 call plug#begin()
 Plug 'dracula/vim', {'as': 'dracula', 'tag': 'v1.2.0'}
-Plug 'vim-airline/vim-airline'
+Plug 'ycm-core/YouCompleteMe'
 Plug 'vim-syntastic/syntastic'
-Plug 'faith/vim-go'
-Plug 'Valloric/YouCompleteMe'
+Plug 'nvie/vim-flake8'
 call plug#end()
 
 syntax on
 filetype plugin indent on
-
-" Airline theme
-let g:airline_theme='dracula'
 
 " Allow backspacing over everything in insert mode
 set bs=indent,eol,start
@@ -39,3 +35,5 @@ set laststatus=2
 " Don't store swap files in $CMD
 set backupdir=/tmp//
 set directory=/tmp//
+
+let python_highlight_all=1

@@ -2,7 +2,7 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-  export ZSH="/home/jordanconard/.oh-my-zsh"
+export ZSH="/home/jconard/.oh-my-zsh"
 
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
@@ -62,6 +62,7 @@ COMPLETION_WAITING_DOTS="true"
 plugins=(
   git
   docker
+  pyenv
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -73,11 +74,55 @@ function chpwd() {
   emulate -L zsh
     ls -gahG
 }
-#kubectl completion
-source <(kubectl completion zsh)
-
 #helm jcompletion
-source <(helm completion zsh)
+#source <(helm completion zsh)
 
 # golang
 export PATH=$PATH:/usr/local/go/bin
+export PATH=$PATH:/home/jconard/go/bin
+
+# python virtualenv
+export PATH=$PATH:/home/jconard/.local/bin
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/home/jconard/Documents/google-cloud-sdk/path.zsh.inc' ]; then . '/home/jconard/Documents/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/home/jconard/Documents/google-cloud-sdk/completion.zsh.inc' ]; then . '/home/jconard/Documents/google-cloud-sdk/completion.zsh.inc'; fi
+
+# Dev tools aliases
+alias vpn='/home/jconard/Documents/forticlientsslvpn/64bit/forticlientsslvpn_cli -s vpn.spotify.net:443 --vpnuser jconard --keepalive'
+alias intellij='snap run intellij-idea-ultimate </dev/null &>/dev/null &'
+alias studio='studio.sh </dev/null &>/dev/null &'
+
+#kubectl completion
+source <(kubectl completion zsh)
+
+# jenv
+export PATH="$HOME/.jenv/bin:$PATH"
+eval "$(jenv init -)"
+
+# maven
+alias maven="/usr/bin/mvn"
+
+# pyenv
+export PYENV_ROOT="$HOME/.pyenv"
+export PATH="$PYENV_ROOT/bin:$PATH"
+export PATH="$PYENV_ROOT/shims:$PATH"
+if command -v pyenv 1>/dev/null 2>&1; then
+  eval "$(pyenv init -)"
+fi
+
+# pyenv-virtualenv
+eval "$(pyenv virtualenv-init -)"
+
+# android studio
+export PATH=$PATH:/home/jconard/android-studio/bin
+
+# helm
+export PATH=$PATH:/usr/sbin
+source <(helm completion zsh)
+
+# nvm
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
