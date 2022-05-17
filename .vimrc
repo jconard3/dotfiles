@@ -3,9 +3,6 @@ set nocompatible
 " vim-plug begin
 call plug#begin()
 Plug 'dracula/vim', {'as': 'dracula', 'tag': 'v1.2.0'}
-Plug 'ycm-core/YouCompleteMe'
-Plug 'vim-syntastic/syntastic'
-Plug 'nvie/vim-flake8'
 call plug#end()
 
 syntax on
@@ -37,3 +34,6 @@ set backupdir=/tmp//
 set directory=/tmp//
 
 let python_highlight_all=1
+
+" Spellcheck on markdown files
+autocmd FileType markdown setlocal spell
